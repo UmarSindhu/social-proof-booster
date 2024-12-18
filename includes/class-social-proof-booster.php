@@ -11,10 +11,8 @@ class Social_Proof_Booster {
         add_action( 'init', array( $this, 'spb_initialize' ) );
 
         // Hook to enqueue scripts and styles
+        add_action( 'admin_enqueue_scripts', [$this, 'spb_admin_custom_styles'] );
         add_action( 'wp_enqueue_scripts', array( $this, 'spb_enqueue_scripts' ) );
-        add_action('wp_enqueue_scripts', function () {
-            wp_enqueue_script('heartbeat');
-        });
 
         //Initialize settings
         add_action( 'admin_init', array( $this, 'spb_initialize_settings' ) );
@@ -43,20 +41,14 @@ class Social_Proof_Booster {
         }
     }
 
+    function spb_admin_custom_styles() {
+        wp_enqueue_style( 'spb-admin-styles', SPB_PLUGIN_URL . 'assets/css/admin-style.css' );
+    }
+
     public function spb_enqueue_scripts() {
-        wp_enqueue_style( 
-            'spb-style', 
-            SPB_PLUGIN_URL . 'assets/css/style.css', 
-            array(), 
-            '1.0' 
-        );
-        wp_enqueue_script( 
-            'spb-script', 
-            SPB_PLUGIN_URL . 'assets/js/script.js', 
-            array( 'jquery' ), 
-            '1.0', 
-            true 
-        );
+        wp_enqueue_style( 'spb-style', SPB_PLUGIN_URL . 'assets/css/style.css', array(), '1.0' );
+        wp_enqueue_script('heartbeat');
+        wp_enqueue_script( 'spb-script', SPB_PLUGIN_URL . 'assets/js/script.js', array( 'jquery' ), '1.0', true );
 
         $enabled = get_option( 'spb_enabled', 1 );
         $popup_delay = get_option( 'spb_popup_delay', 8 );
@@ -151,7 +143,7 @@ class Social_Proof_Booster {
 
         ?>
         <h3>Impressions</h3>
-        <table class="form-table">
+        <table class="form-table sbp-table">
             <thead>
                 <tr>
                     <th>Popup Data</th>
