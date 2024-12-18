@@ -1,17 +1,14 @@
 <?php
 /*
  Plugin Name: Social Proof Booster
- Plugin URI: https://yourwebsite.com
+ Plugin URI: https://organio.pk
  Description: Displays real-time social proof popups to boost conversions.
  Version: 1.0
  Author: Umar Sindhu
  email: umarsindhu3@gmail.com
- Author URI: https://yourwebsite.com
+ Author URI: https://organio.pk
  License: GPL2
 */
-// ini_set('display_errors', '1');
-// ini_set('display_startup_errors', '1');
-// error_reporting(E_ALL);
 
 // Exit if accessed directly
 if ( !defined( 'ABSPATH' ) ) exit;
