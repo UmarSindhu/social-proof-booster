@@ -3,11 +3,13 @@
  Plugin Name: Social Proof Booster
  Plugin URI: https://organio.pk
  Description: Displays real-time social proof popups to boost conversions.
- Version: 1.0
+ Version: 1.0.0
  Author: Umar Sindhu
  email: umarsindhu3@gmail.com
  Author URI: https://organio.pk
- License: GPL2
+ License: GPLv2 or later
+ License URI: https://www.gnu.org/licenses/gpl-2.0.html
+ Text Domain: social-proof-booster
 */
 
 // Exit if accessed directly
